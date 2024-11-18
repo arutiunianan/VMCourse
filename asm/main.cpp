@@ -1,6 +1,6 @@
 #include "asm.hpp"
 
 int main() {
-    AsmCompiler asmcom("../quadratic_equation.txt");
-    asmcom.ASMExecute("../result.txt");
+    AsmCompiler asmcom("../test/quadratic_equation.txt");
+    asmcom.Execute("../test/binary.txt");
 }

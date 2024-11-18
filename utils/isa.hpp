@@ -28,8 +28,6 @@ class Instruction {
 public:
     Cmds cmd;
     Elem_t arg;
-
-    Instruction(): cmd(HLT), arg(0) {}
 };
 
 #endif // #define ISA_H_

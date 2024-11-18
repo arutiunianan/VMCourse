@@ -6,19 +6,13 @@
 
 typedef double Elem_t;
 
-const size_t INITIAL_CAPACITY = 2;
-
-class Stack
-{
+class Stack {
 private:
 	size_t size;
-	size_t capacity;
-
 	std::vector<Elem_t> data;
 
 public:
-    Stack(): size(0), capacity(INITIAL_CAPACITY) {};
-    Stack(size_t cap): size(0), capacity(cap) {};
+    Stack(): size(0) {};
 
     void   StackPush(Elem_t elem);
     Elem_t StackPop();
