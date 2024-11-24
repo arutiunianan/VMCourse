@@ -118,6 +118,7 @@ Core::Core(std::string file_name) {
 
 int Core::Execute() {
     int instructions_num = instructions.size();
+    Frame frame;
     for(current_line = 1; current_line < instructions_num + 1; ++current_line) {
         Instruction instr = instructions[current_line - 1];
 

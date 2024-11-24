@@ -1,5 +1,5 @@
-#define POP_STK() stack.Pop()
-#define PUSH_STK(num) stack.Push(num)
+#define POP_STK() frame.PopLocal()
+#define PUSH_STK(num) frame.PushLocal(num)
 
 DEF_CMD(HLT, 0, 0, {
         printf("\nend\n");
@@ -133,6 +133,8 @@ DEF_CMD(JNE, 18, 1, {
 )
 
 DEF_CMD(CALL, 19, 1, {
+        stack.Push(frame);
+        frame = Frame();
         PUSH_STK(current_line);
         current_line = GetValidArgument(arg_type, instr) - 1;
     }
@@ -141,6 +143,7 @@ DEF_CMD(CALL, 19, 1, {
 DEF_CMD(RET, 20, 0,
     if (stack.get_size() >= 1) {
         Elem_t ret_address = POP_STK();
+        frame = stack.Pop();
         current_line = (int)ret_address;
     }
 )

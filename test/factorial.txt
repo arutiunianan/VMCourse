@@ -1,0 +1,28 @@
+IN
+POP rax
+PUSH 1
+POP rbx
+PUSH 0
+POP rcx
+CALL loopBody
+PUSH rbx
+OUT
+HLT
+
+loopBody:
+    PUSH rcx
+    PUSH 1
+    ADD
+    POP rcx
+
+    PUSH rbx
+    PUSH rcx
+    MUL
+    POP rbx
+    JMP loopIf
+
+loopIf:
+    PUSH rax
+    PUSH rcx
+    JNE loopBody
+    RET

@@ -19,12 +19,19 @@ public:
 
 };
 
-/*class Frame {
-    Stack stack;
-    Frame* pframe;
+class Frame {
+public:
+    void PushLocal(Elem_t elem) {
+        stack.Push(elem);
+    }
 
-    Frame(Frame* mamaframe): pframe(mamaframe) {}
-};*/
+    Elem_t PopLocal() {
+        return stack.Pop();
+    }
+
+public:
+    Stack<Elem_t> stack;
+};
 
 class Core {
 public:
@@ -37,7 +44,7 @@ private:
     Elem_t GetValidArgument(ArgType arg_type, Instruction& istr);
 
 public:
-    Stack stack;
+    Stack<Frame> stack;
 
     Registers registers;
 

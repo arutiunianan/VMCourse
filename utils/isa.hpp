@@ -1,7 +1,7 @@
 #ifndef ISA_H_
 #define ISA_H_
 
-#include "stack/stack.hpp"
+#include "stack.hpp"
 
 enum Regs  {
     #define REG_DEF(name, reg_code) name = reg_code,
