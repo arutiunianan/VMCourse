@@ -11,4 +11,10 @@ add_compile_options(
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 
-add_executable(asm asm/asm.cpp asm/main.cpp utils/stack/stack.cpp)
+if(CORE)
+    add_executable(core core/core.cpp core/main.cpp utils/stack/stack.cpp)
+endif()
+
+if(ASM)
+    add_executable(asm asm/asm.cpp asm/main.cpp)
+endif()

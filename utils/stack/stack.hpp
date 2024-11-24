@@ -2,20 +2,24 @@
 #define STACK_H
 
 #include <iostream>
-#include <vector>
+#include <list>
 
 typedef double Elem_t;
 
 class Stack {
 private:
 	size_t size;
-	std::vector<Elem_t> data;
+	std::list<Elem_t> data;
 
 public:
     Stack(): size(0) {};
 
-    void   StackPush(Elem_t elem);
-    Elem_t StackPop();
+    size_t get_size() {
+        return size;
+    }
+
+    void   Push(Elem_t elem);
+    Elem_t Pop();
 };
 
 #endif // STACK_H
