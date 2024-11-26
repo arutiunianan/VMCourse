@@ -11,10 +11,5 @@ add_compile_options(
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 
-if(CORE)
-    add_executable(core core/core.cpp core/main.cpp)
-endif()
-
-if(ASM)
-    add_executable(asm asm/asm.cpp asm/main.cpp)
-endif()
+add_executable(core core/core.cpp core/main.cpp)
+add_executable(asm asm/asm.cpp asm/main.cpp)

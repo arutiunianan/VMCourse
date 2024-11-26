@@ -135,5 +135,9 @@ int Core::Execute() {
                 #undef DEF_CMD
             }
         }
+        else {
+            std::cerr << "Invalid command or argument" << std::endl;
+            return;
+        }
     }
 }

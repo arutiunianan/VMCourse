@@ -29,7 +29,7 @@ public:
         return stack.Pop();
     }
 
-public:
+private:
     Stack<Elem_t> stack;
 };
 
@@ -43,7 +43,7 @@ private:
     void SetReg(Elem_t reg, Elem_t value);
     Elem_t GetValidArgument(ArgType arg_type, Instruction& istr);
 
-public:
+private:
     Stack<Frame> stack;
 
     Registers registers;
