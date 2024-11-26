@@ -1,6 +1,15 @@
 #include "asm.hpp"
 
-int main() {
-    AsmCompiler asmcom("../test/quadratic_equation.txt");
-    asmcom.Execute("../test/binary.txt");
+int main(int argc, const char* argv[]) {
+    if(argc == 3)
+    {
+        AsmCompiler ass{argv[1]};
+        ass.Execute(argv[2]);
+    }
+    else
+    {
+        printf("Invalid number of args to program\n");
+        return 1;
+    }
+    return 0;
 }

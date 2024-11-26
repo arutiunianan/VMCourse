@@ -120,9 +120,6 @@ void AsmCompiler::Execute(std::string wfile_name) {
     }
 
     int instructions_size = instructions.size();
-    for(int i = 0; i < instructions_size; ++i) {
-        std::cout << instructions[i].cmd << " " << instructions[i].arg << "\n";
-    }
 
     for(int i = 0; i < instructions_size; ++i) {
         file.write(reinterpret_cast<char*>(&instructions[i]), sizeof(Instruction));
@@ -130,8 +127,7 @@ void AsmCompiler::Execute(std::string wfile_name) {
     file.close();
 }
 
-void AsmCompiler::ReadFile(std::ifstream& file)
-{
+void AsmCompiler::ReadFile(std::ifstream& file) {
     assert(file);
     std::string line;
     while(std::getline(file, line)) {
